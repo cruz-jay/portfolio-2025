@@ -1,0 +1,17 @@
+.pageContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.mainContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 2rem 0;
+  min-height: calc(
+    100vh - 12rem - 330px
+  ); /* Adjust based on your header and footer heights */
+}
