@@ -2,14 +2,8 @@ import ProjectShowcase from "./ProjectShowcase";
 
 const UseCertHome = () => {
   const projectData = {
-    title: "CSN Certification System",
-    description:
-      "A comprehensive certification management system built for educational institutions. Features role-based access control, JWT authentication, and real-time exam scheduling.",
+    title: "Certification Registration System",
     techStack: [
-      {
-        name: "React + Vite",
-        description: "Modern frontend framework with speedy development",
-      },
       {
         name: "Django + DRF",
         description: "Robust backend with REST API support",
@@ -26,56 +20,20 @@ const UseCertHome = () => {
         name: "Railway",
         description: "Cloud deployment platform",
       },
+    ],
+
+    // Empty codePreviews array - you can add your own code examples
+    codePreviews: [
       {
-        name: "CSS Modules",
-        description: "Scoped styling solution",
+        code: "", // Add your code snippets here
+        description: "", // Add your descriptions here
       },
     ],
-    features: [
-      {
-        title: "Role-Based Access",
-        description:
-          "Separate interfaces for students and faculty members with appropriate permissions and views",
-      },
-      {
-        title: "Exam Registration",
-        description:
-          "Students can browse available exams, register for up to 3 exams, and view their registration status",
-      },
-      {
-        title: "Faculty Dashboard",
-        description:
-          "Comprehensive dashboard for faculty to manage exams, view registrations, and track student progress",
-      },
-      {
-        title: "JWT Authentication",
-        description:
-          "Secure token-based authentication system with refresh token support",
-      },
-    ],
+
+    // Project journey challenges will be displayed from the ProjectShowcase component,
+    // but you can customize them in the actual component
+
     demoLink: "/useCert/login",
-    codePreview: `// Protected Route Implementation
-const ProtectedRoute = ({ children }) => {
-  const [isAuth, setAuth] = useState(null);
-  const [profileComplete, setProfileComplete] = useState(null);
-
-  useEffect(() => {
-    auth().catch(() => {
-      setAuth(false);
-      setProfileComplete(false);
-    });
-  }, []);
-
-  if (!isAuth) {
-    return <Navigate to="/login" />;
-  }
-
-  if (!profileComplete) {
-    return <Navigate to="/complete-profile" />;
-  }
-
-  return children;
-};`,
   };
 
   return <ProjectShowcase {...projectData} />;

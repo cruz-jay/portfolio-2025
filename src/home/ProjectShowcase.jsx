@@ -1,4 +1,56 @@
-import { Github, ExternalLink, Code, Database, Layout } from "lucide-react";
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
+const CodeCarousel = ({ codePreviews }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentIndex((current) =>
+      current === codePreviews.length - 1 ? 0 : current + 1
+    );
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((current) =>
+      current === 0 ? codePreviews.length - 1 : current - 1
+    );
+  };
+
+  return (
+    <div className="relative">
+      <div className="overflow-hidden rounded-xl bg-[#0D0D3D] p-6">
+        <pre className="text-gray-300 overflow-x-auto">
+          <code>{codePreviews[currentIndex].code}</code>
+        </pre>
+        <p className="text-[#B8860B] mt-4 font-custom2">
+          {codePreviews[currentIndex].description}
+        </p>
+      </div>
+      <button
+        onClick={prevSlide}
+        className="absolute left-4 top-1/2 -translate-y-1/2 text-[#B8860B] hover:text-[#DAA520]">
+        <ChevronLeft size={24} />
+      </button>
+      <button
+        onClick={nextSlide}
+        className="absolute right-4 top-1/2 -translate-y-1/2 text-[#B8860B] hover:text-[#DAA520]">
+        <ChevronRight size={24} />
+      </button>
+      <div className="flex justify-center gap-2 mt-4">
+        {codePreviews.map((_, index) => (
+          <button
+            key={index}
+            className={`w-2 h-2 rounded-full ${
+              index === currentIndex ? "bg-[#B8860B]" : "bg-gray-600"
+            }`}
+            onClick={() => setCurrentIndex(index)}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const ProjectShowcase = ({
   title,
@@ -6,99 +58,89 @@ const ProjectShowcase = ({
   techStack,
   features,
   demoLink,
-  codePreview,
-  architectureImage = "/api/placeholder/800/400",
+  codePreviews,
 }) => {
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4">
-      <div className="max-w-6xl mx-auto">
-        {/* Header Section */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">{title}</h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            {description}
-          </p>
-        </div>
+    <div className="min-h-screen bg-[#0A0A2A] text-gray-300 py-20 px-8 lg:px-20">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        className="max-w-5xl mx-auto">
+        <h1 className="text-4xl font-bold mb-6 font-custom text-[#B8860B]">
+          {title}
+        </h1>
+        <p className="text-xl mb-12 font-custom3">{description}</p>
 
-        {/* Tech Stack Section */}
-        <div className="bg-white rounded-xl shadow-md p-8 mb-8">
-          <h2 className="text-2xl font-semibold mb-6 flex items-center">
-            <Code className="mr-2" /> Tech Stack
+        {/* Tech Stack */}
+        <motion.div
+          initial={{ x: 100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          className="mb-16">
+          <h2 className="text-2xl font-bold mb-6 font-custom text-[#B8860B]">
+            Tech Stack
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {techStack.map((tech, index) => (
-              <div
-                key={index}
-                className="flex items-center p-4 bg-gray-50 rounded-lg">
-                <div className="ml-3">
-                  <h3 className="font-medium text-gray-900">{tech.name}</h3>
-                  <p className="text-sm text-gray-500">{tech.description}</p>
-                </div>
+              <div key={index} className="bg-[#0D0D3D] p-4 rounded-xl">
+                <h3 className="text-[#B8860B] font-custom2 text-lg mb-2">
+                  {tech.name}
+                </h3>
+                <p className="text-gray-400 font-custom3">{tech.description}</p>
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
 
-        {/* Features Section */}
-        <div className="bg-white rounded-xl shadow-md p-8 mb-8">
-          <h2 className="text-2xl font-semibold mb-6 flex items-center">
-            <Layout className="mr-2" /> Key Features
+        {/* Project Journey Section */}
+        <motion.div
+          initial={{ x: 100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          className="mb-16">
+          <h2 className="text-2xl font-bold mb-6 font-custom text-[#B8860B]">
+            Project Journey
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {features.map((feature, index) => (
-              <div key={index} className="flex">
-                <div className="flex-shrink-0">
-                  <div className="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
-                    {index + 1}
-                  </div>
-                </div>
-                <div className="ml-4">
-                  <h3 className="text-lg font-medium text-gray-900">
-                    {feature.title}
-                  </h3>
-                  <p className="mt-2 text-gray-600">{feature.description}</p>
-                </div>
-              </div>
-            ))}
+          <div className="bg-[#0D0D3D] rounded-xl p-6">
+            <p className="text-lg font-custom3 mb-4">
+              The development of this project presented several interesting
+              challenges that pushed me to grow as a developer:
+            </p>
+            <ul className="space-y-4 font-custom3">
+              <li>
+                • Managing complex state with Redux while maintaining clean,
+                maintainable code
+              </li>
+              <li>• Implementing efficient data persistence strategies</li>
+              <li>
+                • Creating an intuitive user interface for learning assembly
+                language
+              </li>
+            </ul>
           </div>
-        </div>
+        </motion.div>
 
-        {/* Architecture Overview */}
-        <div className="bg-white rounded-xl shadow-md p-8 mb-8">
-          <h2 className="text-2xl font-semibold mb-6 flex items-center">
-            <Database className="mr-2" /> Architecture Overview
+        {/* Code Previews */}
+        <motion.div
+          initial={{ x: 100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          className="mb-16">
+          <h2 className="text-2xl font-bold mb-6 font-custom text-[#B8860B]">
+            Code Highlights
           </h2>
-          <img
-            src={architectureImage}
-            alt="Project Architecture"
-            className="w-full rounded-lg shadow-lg"
-          />
-        </div>
+          <CodeCarousel codePreviews={codePreviews} />
+        </motion.div>
 
-        {/* Code Preview */}
-        <div className="bg-white rounded-xl shadow-md p-8 mb-8">
-          <h2 className="text-2xl font-semibold mb-6">Code Highlights</h2>
-          <pre className="bg-gray-800 text-gray-100 rounded-lg p-4 overflow-x-auto">
-            <code>{codePreview}</code>
-          </pre>
-        </div>
-
-        {/* Call to Action */}
-        <div className="flex justify-center gap-6">
+        {/* Demo Link */}
+        <motion.div
+          initial={{ x: 100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          className="text-center">
           <a
             href={demoLink}
-            className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
-            <ExternalLink className="mr-2" />
-            Try it Live
+            className="inline-block font-custom2 text-lg text-[#B8860B] p-4 hover:bg-[#0D0D3D] hover:text-[#DAA520] rounded-xl transition-all">
+            View Live Demo →
           </a>
-          <a
-            href="https://github.com/yourusername/project"
-            className="inline-flex items-center px-6 py-3 bg-gray-800 text-white font-semibold rounded-lg hover:bg-gray-900 transition-colors">
-            <Github className="mr-2" />
-            View Source
-          </a>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 };

@@ -22,7 +22,7 @@ const FacultyDashboard = () => {
         </Button>
       </div>
       <FacultyDash />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

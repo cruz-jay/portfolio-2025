@@ -1,18 +1,11 @@
-import React from "react";
 import ProjectShowcase from "./ProjectShowcase";
 
 const UseX86Home = () => {
   const projectData = {
-    title: "x86 Assembly Quiz Platform",
-    description:
-      "An educational platform designed to help students learn x86 assembly language through interactive quizzes and immediate feedback. Features a clean, intuitive interface and comprehensive progress tracking.",
+    title: "x86 Assembly Quiz",
     techStack: [
       {
-        name: "React + Redux",
-        description: "Frontend with robust state management",
-      },
-      {
-        name: "Redux Toolkit",
+        name: "React + Redux Toolkit",
         description: "Modern Redux development",
       },
       {
@@ -27,35 +20,10 @@ const UseX86Home = () => {
         name: "React Router",
         description: "Navigation and routing",
       },
-      {
-        name: "Redux Persist",
-        description: "State persistence",
-      },
     ],
-    features: [
+    codePreviews: [
       {
-        title: "Interactive Quizzes",
-        description:
-          "Dynamically generated quizzes with multiple-choice questions on x86 assembly concepts",
-      },
-      {
-        title: "Progress Tracking",
-        description:
-          "Detailed progress monitoring with performance statistics and improvement suggestions",
-      },
-      {
-        title: "Immediate Feedback",
-        description:
-          "Real-time feedback on answers with explanations and learning resources",
-      },
-      {
-        title: "Topic Categories",
-        description:
-          "Organized learning paths covering different aspects of x86 assembly",
-      },
-    ],
-    demoLink: "/useX86",
-    codePreview: `// Redux Slice Implementation
+        code: `// Redux Slice Implementation
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
@@ -82,14 +50,83 @@ const quizSlice = createSlice({
     start(state) {
       state.status = "active";
       state.secondsRemaining = state.questions.length * 30;
-    },
-    newAnswer(state, action) {
-      const question = state.questions.at(state.index);
-      state.answer = action.payload;
-      state.points += action.payload === question.correctOption ? 10 : 0;
     }
   },
 });`,
+        description: "Core Redux state management implementation",
+      },
+      {
+        code: `// Quiz Component Implementation
+function Quiz() {
+  const questions = useSelector((state) => state.quiz.questions);
+  const status = useSelector((state) => state.quiz.status);
+  
+  useEffect(() => {
+    async function fetchQuestions() {
+      try {
+        const res = await fetch("http://localhost:8000/questions");
+        const data = await res.json();
+        dispatch(dataReceived(data));
+      } catch (err) {
+        dispatch(dataFailed());
+      }
+    }
+    fetchQuestions();
+  }, []);
+
+  return (
+    <div className="app">
+      <Header />
+      <Main>
+        {status === "loading" && <Loader />}
+        {status === "error" && <Error />}
+        {status === "ready" && <StartScreen />}
+        {status === "active" && (
+          <>
+            <Progress />
+            <Question />
+            <Footer />
+          </>
+        )}
+        {status === "finished" && <FinishScreen />}
+      </Main>
+    </div>
+  );
+}`,
+        description:
+          "Main quiz interface with React hooks and conditional rendering",
+      },
+      {
+        code: `// Progress Tracking Implementation
+const trackProgress = async (userId, score) => {
+  const { data, error } = await supabase
+    .from('progress')
+    .upsert({ 
+      user_id: userId,
+      quiz_score: score,
+      completed_at: new Date(),
+      questions_attempted: totalQuestions,
+      time_spent: timeElapsed
+    })
+  
+  if (error) {
+    console.error('Error saving progress:', error)
+    return false
+  }
+  
+  return data
+}
+
+// Usage in quiz completion
+const finishQuiz = async () => {
+  const finalScore = calculateScore()
+  await trackProgress(currentUser.id, finalScore)
+  dispatch(quizCompleted(finalScore))
+}`,
+        description: "Progress tracking with Supabase integration",
+      },
+    ],
+    demoLink: "/useX86",
   };
 
   return <ProjectShowcase {...projectData} />;

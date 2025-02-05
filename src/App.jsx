@@ -13,8 +13,6 @@ import CityList from "./useMap/src/components/CityList";
 import CountryList from "./useMap/src/components/CountyList";
 import Form from "./useMap/src/components/Form";
 
-import "./index.css";
-
 import Login from "./useCert/src/pages/Login";
 import Register from "./useCert/src/pages/Register";
 import UserData from "./useCert/src/pages/UserData";
@@ -26,6 +24,7 @@ import CERT_LAYOUT from "./useCert/src/pages/CERT_LAYOUT";
 import UseCertHome from "./home/useCertHome";
 import UseMapHome from "./home/useMapHome";
 import UseX86Home from "./home/useX86Home";
+import "../src/output.css";
 
 function Logout() {
   localStorage.clear();

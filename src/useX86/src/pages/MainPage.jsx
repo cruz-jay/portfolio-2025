@@ -9,15 +9,18 @@ import ProgressBar from "../components/interfaces/ProgressBar";
 import Quiz from "../components/common/Quiz";
 import NextButton from "../components/common/NextButton";
 import Finished from "../components/common/Finished";
-import "../styles/index.css";
 import { Outlet } from "react-router-dom";
-import "../styles/output.css";
+import "../styles/x86-output.css";
+import Header from "../components/common/Header";
 
 export const ASM_LAYOUT = () => {
   return (
-    <div>
-      <Outlet />
-    </div>
+    <>
+      <Header />
+      <div>
+        <Outlet />
+      </div>
+    </>
   );
 };
 

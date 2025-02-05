@@ -8,7 +8,9 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "build:css": "tailwindcss -i ./src/useX86/src/styles/index.css -o ./src/useX86/src/styles/output.css --watch"
+    "build:main": "tailwindcss -i ./src/index.css -o ./src/output.css --watch",
+    "build:project": "tailwindcss -i ./src/usex86/src/styles/x86-index.css -o ./src/usex86/src/styles/x86-output.css -c tailwind.x86.config.js --watch",
+    "build:css": "npm run build:main && npm run build:project"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.5.0",

@@ -204,7 +204,7 @@ function UserData() {
           Logout
         </Button>
       </form>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

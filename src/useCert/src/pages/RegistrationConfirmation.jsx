@@ -52,7 +52,7 @@ function RegistrationConfirmation() {
           </button>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

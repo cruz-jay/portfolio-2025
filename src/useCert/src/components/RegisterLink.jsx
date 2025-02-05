@@ -12,7 +12,7 @@ function RegisterLink() {
 
   return (
     <div className={styles.registerSection}>
-      <p className={styles.registerText}>New to CSN?</p>
+      <p className={styles.registerText}>New Here?</p>
       <Button type="primary" onClick={RedirectRegister}>
         Register Here
       </Button>

@@ -10,7 +10,7 @@ const Login = () => {
       <Header />
       <Form route="/api/token/" method="login" />
       <RegisterLink />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

@@ -1,0 +1,52 @@
+@font-face {
+  font-family: "Melagllik";
+  src: url("../fonts/melagllik/MELAGLLIK.otf") format("opentype"),
+    url("../fonts/melagllik/MELAGLLIK.ttf") format("truetype"),
+    url("../fonts/melagllik/MELAGLLIK.woff") format("woff"),
+    url("../fonts/melagllik/MELAGLLIK.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Melagllik";
+  src: url("../fonts/melagllik/MELAGLLIK\(ITALIC\).otf") format("opentype"),
+    url("../fonts/melagllik/MELAGLLIK\(ITALIC\).ttf") format("truetype"),
+    url("../fonts/melagllik/MELAGLLIK\ \(ITALIC\).woff") format("woff"),
+    url("../fonts/melagllik/MELAGLLIK\ \(ITALIC\).woff2") format("woff2");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Chillen";
+  src: url("../fonts/chillen/Chillen.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Holage";
+  src: url("../fonts/holage/Holage.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Didot";
+  src: url("../fonts/didot/Didot.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Didot";
+  src: url("../fonts/didot/Didot\ Italic.otf") format("opentype");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}

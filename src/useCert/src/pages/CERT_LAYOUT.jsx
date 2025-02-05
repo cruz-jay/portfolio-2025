@@ -23,7 +23,7 @@ function CERT_LAYOUT() {
         </Button>
       </div>
       <StudentDash />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

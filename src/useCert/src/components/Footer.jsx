@@ -1,5 +1,4 @@
 import { Container, Row, Col } from "react-bootstrap";
-import csn from "../assets/CSN.png";
 import styles from "./Footer.module.css";
 
 function Footer() {
@@ -7,9 +6,7 @@ function Footer() {
     <footer className={styles.footer}>
       <Container>
         <div className={styles.footerContent}>
-          <div className={styles.logoSection}>
-            <img src={csn} alt="CSN Logo" className={styles.logo} />
-          </div>
+          <div className={styles.logoSection}></div>
 
           <div className={styles.linksSection}>
             <div className={styles.linkColumn}>
@@ -52,18 +49,16 @@ function Footer() {
               <h4>Info</h4>
               <ul>
                 <li>Las Vegas, Nevada</li>
-                {/* <li>(702) 651-5000</li> */}
-                <li>Free Luigi Mangione</li>
-                <li>Free Palestine </li>
+                <li>(702) 330-7487</li>
+                <li> ######## </li>
+                <li> ######## </li>
               </ul>
             </div>
           </div>
         </div>
 
         <div className={styles.bottomBar}>
-          <p className={styles.apple}>
-            &copy; 2024 Apple^2 | All Rights Reserved 😤
-          </p>
+          <p className={styles.apple}>&copy; 2024 Apple^2</p>
         </div>
       </Container>
     </footer>
