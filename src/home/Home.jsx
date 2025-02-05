@@ -82,14 +82,6 @@ const AboutMe = () => (
 const Home = () => {
   const projects = [
     {
-      title: "Certification System",
-      description:
-        "An advanced certification and exam management system with role-based access control. Features user authentication, exam scheduling, and progress tracking.",
-      icon: CheckCircle,
-      link: "/showcase_1",
-      tech: ["React", "Django", "JWT", "PostgreSQL"],
-    },
-    {
       title: "World Explorer",
       description:
         "Interactive world map application for tracking visited cities and exploring new destinations. Features dynamic markers and city information.",
@@ -104,6 +96,14 @@ const Home = () => {
       icon: BookOpen,
       link: "/showcase_3",
       tech: ["React", "Redux", "Tailwind CSS"],
+    },
+    {
+      title: "Certification System",
+      description:
+        "An advanced certification and exam management system with role-based access control. Features user authentication, exam scheduling, and progress tracking.",
+      icon: CheckCircle,
+      link: "/showcase_1",
+      tech: ["React", "Django", "JWT", "PostgreSQL"],
     },
   ];
 

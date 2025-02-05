@@ -30,6 +30,11 @@ function City() {
   return (
     <div className={styles.city}>
       <div className={styles.row}>
+        <p>
+          Known Errors: Issue stemming from Context API No notes available No
+          new pin issue from Vercel -jay
+        </p>
+        {/* 
         <h6>City name</h6>
         <h3>
           <span>{emoji}</span> {cityName}
@@ -50,12 +55,12 @@ function City() {
 
       <div className={styles.row}>
         <h6>Learn more</h6>
-        <a
+         <a
           href={`https://en.wikipedia.org/wiki/${cityName}`}
           target="_blank"
           rel="noreferrer">
           Check out {cityName} on Wikipedia &rarr;
-        </a>
+        </a> */}
       </div>
 
       <div>

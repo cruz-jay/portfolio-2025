@@ -24,14 +24,13 @@ function Form() {
 
   return (
     <form className={styles.form}>
-      <div className={styles.row}>
+      {/* <div className={styles.row}>
         <label htmlFor="cityName">City name</label>
         <input
           id="cityName"
           onChange={(e) => setCityName(e.target.value)}
           value={cityName}
         />
-        {/* <span className={styles.flag}>{emoji}</span> */}
       </div>
 
       <div className={styles.row}>
@@ -41,10 +40,15 @@ function Form() {
           onChange={(e) => setDate(e.target.value)}
           value={date}
         />
-      </div>
+      </div> */}
+
+      <p>
+        Known Errors: Issue stemming from Context API No notes available No new
+        pin issue from Vercel -jay
+      </p>
 
       <div className={styles.row}>
-        <label htmlFor="notes">Notes about your trip to {cityName}</label>
+        <label htmlFor="notes">Notes about your trip {cityName}</label>
         <textarea
           id="notes"
           onChange={(e) => setNotes(e.target.value)}
