@@ -42,7 +42,7 @@ const Finished = ({ points, maxPoints, dispatch }) => {
   }
   const navigate = useNavigate();
   const handleRedirect = () => {
-    navigate("/data");
+    navigate("/usex86/data");
   };
 
   return (
