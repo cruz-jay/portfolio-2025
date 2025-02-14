@@ -2,7 +2,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./RegistrationConfirmation.module.css";
 import Header from "../components/Header";
-import Footer from "../components/Footer";
 
 function RegistrationConfirmation() {
   const location = useLocation();
@@ -34,7 +33,7 @@ function RegistrationConfirmation() {
               <strong>Time:</strong> {exam.start_time}
             </p>
             <p>
-              <strong>Location:</strong> {exam.location.campus} -{" "}
+              <strong>Location:</strong> {exam.location.campus} -
               {exam.location.building} Room {exam.location.room_number}
             </p>
 
@@ -52,7 +51,6 @@ function RegistrationConfirmation() {
           </button>
         </div>
       </div>
-      {/* <Footer /> */}
     </>
   );
 }

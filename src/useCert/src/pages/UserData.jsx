@@ -5,7 +5,6 @@ import Button from "../components/Button";
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants";
 import { jwtDecode } from "jwt-decode";
 import Header from "../components/Header";
-import Footer from "../components/Footer";
 
 function UserData() {
   const [formData, setFormData] = useState({

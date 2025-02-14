@@ -2,6 +2,19 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+const VideoPlayer = ({ videoFile }) => (
+  <div className="mb-24">
+    <video
+      src={videoFile}
+      autoPlay
+      muted
+      playsInline
+      className="w-full h-auto rounded-xl"
+      onContextMenu={(e) => e.preventDefault()}
+    />
+  </div>
+);
+
 const CodeCarousel = ({ codePreviews }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -59,6 +72,7 @@ const ProjectShowcase = ({
   features,
   demoLink,
   codePreviews,
+  videoFile,
 }) => {
   return (
     <div className="min-h-screen bg-[#0A0A2A] text-gray-300 py-20 px-8 lg:px-20">
@@ -70,7 +84,6 @@ const ProjectShowcase = ({
           {title}
         </h1>
         <p className="text-xl mb-12 font-custom3">{description}</p>
-
         {/* Tech Stack */}
         <motion.div
           initial={{ x: 100, opacity: 0 }}
@@ -90,7 +103,6 @@ const ProjectShowcase = ({
             ))}
           </div>
         </motion.div>
-
         {/* Project Journey Section */}
         <motion.div
           initial={{ x: 100, opacity: 0 }}
@@ -111,14 +123,12 @@ const ProjectShowcase = ({
               </li>
               <li>• Implementing efficient data persistence strategies</li>
               <li>
-                • Creating an intuitive user interface for learning assembly
-                language
+                • Creating an intuitive routing system thats clean and concise
               </li>
             </ul>
           </div>
         </motion.div>
-
-        {/* Code Previews */}
+        {videoFile && <VideoPlayer videoFile={videoFile} />}{" "}
         <motion.div
           initial={{ x: 100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
@@ -128,7 +138,6 @@ const ProjectShowcase = ({
           </h2>
           <CodeCarousel codePreviews={codePreviews} />
         </motion.div>
-
         {/* Demo Link */}
         <motion.div
           initial={{ x: 100, opacity: 0 }}

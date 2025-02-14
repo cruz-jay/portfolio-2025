@@ -82,20 +82,20 @@ const AboutMe = () => (
 const Home = () => {
   const projects = [
     {
-      title: "World Explorer",
-      description:
-        "Interactive world map application for tracking visited cities and exploring new destinations.",
-      icon: Map,
-      link: "/showcase_2",
-      tech: ["React", "Leaflet", "REST API", "CSS Modules"],
-    },
-    {
       title: "x86 Assembly Quiz",
       description:
         "Educational platform for learning x86 assembly language through interactive quizzes.",
       icon: BookOpen,
       link: "/showcase_3",
       tech: ["React", "Redux", "Tailwind CSS"],
+    },
+    {
+      title: "World Explorer",
+      description:
+        "Interactive world map application for tracking visited cities and exploring new destinations.",
+      icon: Map,
+      link: "/showcase_2",
+      tech: ["React", "Leaflet", "REST API", "CSS Modules"],
     },
     {
       title: "Certification System",
@@ -112,7 +112,6 @@ const Home = () => {
       <div className="max-w-5xl mx-auto px-8 lg:px-20">
         <Header />
         <AboutMe />
-
         <motion.div {...fadeInRight} className="min-h-screen py-20">
           <h2 className="text-4xl font-bold mb-20 font-custom">PROJECTS</h2>
           <div className="grid grid-cols-1 gap-32">
@@ -122,7 +121,6 @@ const Home = () => {
             ))}
           </div>
         </motion.div>
-
         <motion.footer
           {...fadeInRight}
           className="py-20 text-center text-gray-400">

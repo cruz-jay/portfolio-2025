@@ -12,7 +12,6 @@ const api = axios.create({
 
 api.interceptors.request.use(
   (config) => {
-    // Force HTTPS
     if (config.baseURL && config.baseURL.startsWith("http://")) {
       config.baseURL = config.baseURL.replace("http://", "https://");
     }

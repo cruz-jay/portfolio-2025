@@ -13,8 +13,8 @@ const UseMapHome = () => {
         description: "State management solution",
       },
       {
-        name: "React Router",
-        description: "Client-side routing",
+        name: "React Router ",
+        description: "Navigation and routing",
       },
       {
         name: "Geolocation API Leaflet Maps",
@@ -23,154 +23,76 @@ const UseMapHome = () => {
     ],
     codePreviews: [
       {
-        code: `// Map Component Implementation
-import { useEffect } from "react";
-import { useMap } from "react-leaflet";
-
-function ChangeCenter({ position }) {
-  const map = useMap();
-
-  useEffect(
-    function () {
-      map.setView(position);
-    },
-    [map, position]
-  );
-
-  return null;
-}
+        code: `// Map.jsx -         
+import { MapContainer, TileLayer, Marker, Popup, useMap, useMapEvents } from "react-leaflet";
 
 function Map() {
-  const [mapPosition, setMapPosition] = useState([40, -3]);
-  const [cities, setCities] = useState([]);
-
   return (
     <div className={styles.mapContainer}>
       <MapContainer
         center={mapPosition}
-        zoom={6}
+        // center={[lat, lng]}
+        zoom={3.1}
         scrollWheelZoom={true}
         className={styles.map}>
         <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-          url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         {cities.map((city) => (
           <Marker
-            position={[city.lat, city.lng]}
+            position={[city.position.lat, city.position.lng]}
             key={city.id}>
             <Popup>
-              <span>{city.emoji}</span> <span>{city.cityName}</span>
+              <div>{city.notes}</div>
+              <br />
+              <div>{city.emoji}</div>
+              <div>{city.cityName}</div>
             </Popup>
           </Marker>
         ))}
-        <ChangeCenter position={mapPosition} />
+
+        <ChangeCenter position={[lat || 36.1699, lng || 2.1398]} />
+        <DetectClick />
       </MapContainer>
     </div>
   );
-}`,
-        description: "Core map functionality with Leaflet integration",
+}
+  `,
+        description: "Core map functionality with Leaflet ",
       },
       {
-        code: `// Cities Context Implementation
-import { createContext, useState, useEffect } from "react";
+        code: `// Geolocation.jsx
+import { useState } from "react";
 
-export const CitiesContext = createContext();
-
-function CitiesProvider({ children }) {
-  const [cities, setCities] = useState([]);
+export function useGeolocation() {
   const [isLoading, setIsLoading] = useState(false);
-  const [currentCity, setCurrentCity] = useState({});
+  const [position, setPosition] = useState();
+  const [error, setError] = useState(null);
 
-  useEffect(function () {
-    async function fetchCities() {
-      try {
-        setIsLoading(true);
-        const res = await fetch(BASE_URL);
-        const data = await res.json();
-        setCities(data);
-      } catch {
-        alert("There was an error loading the cities...");
-      } finally {
+  function getPosition() {
+    if (!navigator.geolocation)
+      return setError("Your browser does not support geolocation");
+
+    setIsLoading(true);
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        setPosition({
+          lat: pos.coords.latitude,
+          lng: pos.coords.longitude,
+        });
+        setIsLoading(false);
+      },
+      (error) => {
+        setError(error.message);
         setIsLoading(false);
       }
-    }
-    fetchCities();
-  }, []);
-
-  async function getCity(id) {
-    try {
-      setIsLoading(true);
-      const res = await fetch(\`\${BASE_URL}/\${id}\`);
-      const data = await res.json();
-      setCurrentCity(data);
-    } catch {
-      alert("There was an error loading the city...");
-    } finally {
-      setIsLoading(false);
-    }
+    );
   }
-
-  return (
-    <CitiesContext.Provider
-      value={{
-        cities,
-        isLoading,
-        currentCity,
-        getCity,
-      }}>
-      {children}
-    </CitiesContext.Provider>
-  );
-}`,
-        description: "Context API implementation for state management",
-      },
-      {
-        code: `// Geolocation and City Form
-import { useState } from "react";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-import styles from "./Form.module.css";
-
-export function Form() {
-  const [cityName, setCityName] = useState("");
-  const [date, setDate] = useState(new Date());
-  const [notes, setNotes] = useState("");
-  const [isLoadingGeolocation, setIsLoadingGeolocation] = useState(false);
-  const [geolocationError, setGeolocationError] = useState("");
-  
-  const [lat, lng] = useUrlPosition();
-
-  useEffect(
-    function () {
-      if (!lat && !lng) return;
-
-      async function fetchCityData() {
-        try {
-          setIsLoadingGeolocation(true);
-          setGeolocationError("");
-          const res = await fetch(
-            \`https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=\${lat}&longitude=\${lng}&localityLanguage=en\`
-          );
-          const data = await res.json();
-
-          if (!data.countryCode)
-            throw new Error(
-              "That doesn't seem to be a city. Click somewhere else 😉"
-            );
-
-          setCityName(data.city || data.locality || "");
-        } catch (err) {
-          setGeolocationError(err.message);
-        } finally {
-          setIsLoadingGeolocation(false);
-        }
-      }
-      fetchCityData();
-    },
-    [lat, lng]
-  );`,
-        description: "Geolocation features and city form implementation",
+  return { position, getPosition, isLoading, error };
+}
+`,
+        description: "Reusing Logic with Custom Hooks",
       },
     ],
     demoLink: "/useMap",

@@ -1,4 +1,3 @@
-import Footer from "../components/Footer";
 import Header from "../components/Header";
 import FacultyDash from "../components/FacultyDash";
 import Button from "../components/Button";

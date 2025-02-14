@@ -1,7 +1,7 @@
 import { useSearchParams } from "react-router-dom";
 import styles from "./Map.module.css";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { UseCities } from "../contexts/CitiesContext";
 // import { click } from "@testing-library/user-event/dist/click";
 import {
@@ -25,13 +25,6 @@ function Map() {
 
   const lat = searchParams.get("lat");
   const lng = searchParams.get("lng");
-
-  // useEffect(
-  //   function () {
-  //     if (lat && lng) setMapPosition([lat, lng]);
-  //   },
-  //   [lat, lng]
-  // );
 
   return (
     <div className={styles.mapContainer}>
