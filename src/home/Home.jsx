@@ -73,7 +73,7 @@ const AboutMe = () => (
     </p>
     <motion.a
       whileHover={{ x: 5 }}
-      href="https://rtzwjflattrvmhgikvrv.supabase.co/storage/v1/object/public/CS218//Martinez.pdf"
+      href="https://rtzwjflattrvmhgikvrv.supabase.co/storage/v1/object/public/CS218//R.pdf"
       className="font-custom2 text-2xl text-[#B8860B] p-5 hover:bg-[#858d71] hover:text-[#FFFF] rounded-xl transition-colors inline-flex items-center gap-5">
       Want to see my Resume?
       <span className="text-lg">→</span>
