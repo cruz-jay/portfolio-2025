@@ -32,11 +32,11 @@ const CodeCarousel = ({ codePreviews }) => {
 
   return (
     <div className="relative">
-      <div className="overflow-hidden rounded-xl bg-[#0D0D3D] p-6">
+      <div className="overflow-hidden rounded-xl bg-[#858d71] p-6">
         <pre className="text-gray-300 overflow-x-auto">
           <code>{codePreviews[currentIndex].code}</code>
         </pre>
-        <p className="text-[#B8860B] mt-4 font-custom2">
+        <p className="text-[#000] mt-4 font-custom2 text-2xl ">
           {codePreviews[currentIndex].description}
         </p>
       </div>
@@ -65,6 +65,9 @@ const CodeCarousel = ({ codePreviews }) => {
   );
 };
 
+// 858d71 green
+// 0b2c3d blue
+
 const ProjectShowcase = ({
   title,
   description,
@@ -75,7 +78,7 @@ const ProjectShowcase = ({
   videoFile,
 }) => {
   return (
-    <div className="min-h-screen bg-[#0A0A2A] text-gray-300 py-20 px-8 lg:px-20">
+    <div className="min-h-screen bg-[#0b2c3d] text-black py-20 px-8 lg:px-20">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -94,11 +97,11 @@ const ProjectShowcase = ({
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {techStack.map((tech, index) => (
-              <div key={index} className="bg-[#0D0D3D] p-4 rounded-xl">
+              <div key={index} className="bg-[#FFFF] p-4 rounded-xl">
                 <h3 className="text-[#B8860B] font-custom2 text-lg mb-2">
                   {tech.name}
                 </h3>
-                <p className="text-gray-400 font-custom3">{tech.description}</p>
+                <p className="text-black font-custom3">{tech.description}</p>
               </div>
             ))}
           </div>
@@ -111,7 +114,7 @@ const ProjectShowcase = ({
           <h2 className="text-2xl font-bold mb-6 font-custom text-[#B8860B]">
             Project Journey
           </h2>
-          <div className="bg-[#0D0D3D] rounded-xl p-6">
+          <div className="bg-[#FFF] rounded-xl p-6">
             <p className="text-lg font-custom3 mb-4">
               The development of this project presented several interesting
               challenges that pushed me to grow as a developer:
@@ -145,7 +148,7 @@ const ProjectShowcase = ({
           className="text-center">
           <a
             href={demoLink}
-            className="inline-block font-custom2 text-lg text-[#B8860B] p-4 hover:bg-[#0D0D3D] hover:text-[#DAA520] rounded-xl transition-all">
+            className="inline-block font-custom2 text-lg text-[#B8860B] p-4 hover:bg-[#858d71] hover:text-[#DAA520] rounded-xl transition-all">
             View Live Demo →
           </a>
         </motion.div>

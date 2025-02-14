@@ -1,6 +1,7 @@
 import { Map, BookOpen, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail } from "lucide-react";
+import Saturn from "./Saturn";
 
 const fadeInRight = {
   initial: { x: 100, opacity: 0 },
@@ -13,21 +14,21 @@ const ProjectCard = ({ title, description, icon: Icon, link, tech }) => (
   <motion.div
     {...fadeInRight}
     href={link}
-    className=" group relative flex flex-col p-6 rounded-xl transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:bg-[#000]">
-    <div className="p-4 rounded-full bg-[#0A0A2A] w-fit mb-1 group-hover:bg-[#11113F] transition-colors">
-      <Icon className="w-8 h-8 text-[#B8860B]" />
+    className=" group relative flex flex-col p-6 rounded-xl transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:bg-[#FFF]">
+    <div className="p-5 rounded-full bg-[#858d71] w-fit mb-5 group-hover:bg-[#00000] transition-colors">
+      <Icon className="w-8 h-8 text-[#FFFF]" />
     </div>
     <h3 className="text-4xl font-bold mb-1 text-[#B8860B] font-custom ">
       {title}
     </h3>
-    <p className="text-gray-300 mb-2 flex-grow font-custom3 text-2xl ">
+    <p className="text-gray-300 mb-2 flex-grow font-custom3 text-2xl group-hover:text-black transition-colors">
       {description}
     </p>
     <div className="flex flex-wrap gap-2 mb-2  ">
       {tech.map((item, index) => (
         <span
           key={index}
-          className=" font-custom2 text-2xl px-3 py-1 bg-[#0A0A2A] text-gray-300 rounded-full">
+          className="font-custom2 text-2xl px-3 py-1 bg-[#858d71] text-gray-300   group-hover:text-black rounded-full transition-colors">
           {item}
         </span>
       ))}
@@ -35,7 +36,7 @@ const ProjectCard = ({ title, description, icon: Icon, link, tech }) => (
     <motion.a
       href={link}
       whileHover={{ x: 5 }}
-      className=" font-custom2 text-2xl text-[#B8860B] p-3  w-fit  hover:bg-[#0A0A2A] hover:text-[#DAA520] rounded-xl transition-colors inline-flex items-center">
+      className=" font-custom2 text-2xl text-[#B8860B] p-3  w-fit  hover:bg-[#858d71] hover:text-[#FFFF] rounded-xl transition-colors inline-flex items-center">
       View Project →
     </motion.a>
   </motion.div>
@@ -73,7 +74,7 @@ const AboutMe = () => (
     <motion.a
       whileHover={{ x: 5 }}
       href="https://rtzwjflattrvmhgikvrv.supabase.co/storage/v1/object/public/CS218//Martinez.pdf"
-      className="font-custom2 text-2xl text-[#B8860B] p-3 hover:bg-[#000] hover:text-[#DAA520] rounded-xl transition-colors inline-flex items-center gap-5">
+      className="font-custom2 text-2xl text-[#B8860B] p-5 hover:bg-[#858d71] hover:text-[#FFFF] rounded-xl transition-colors inline-flex items-center gap-5">
       Want to see my Resume?
       <span className="text-lg">→</span>
     </motion.a>
@@ -108,9 +109,10 @@ const Home = () => {
   ];
 
   return (
-    <div className="bg-[#0A0A2A] text-gray-300">
+    <div className="bg-[#0b2c3d] text-gray-300">
       <div className="max-w-5xl mx-auto px-8 lg:px-20">
         <Header />
+        {/* <Saturn /> */}
         <AboutMe />
         <motion.div {...fadeInRight} className="min-h-screen py-20">
           <h2 className="text-4xl font-bold mb-20 font-custom">PROJECTS</h2>
