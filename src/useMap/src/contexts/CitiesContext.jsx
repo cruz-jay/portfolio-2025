@@ -2,10 +2,7 @@ import { createContext, useContext } from "react";
 import { useState, useEffect } from "react";
 // const BASE_URL = "http://localhost:8000";
 const BASE_URL =
-  // "https://rtzwjflattrvmhgikvrv.supabase.co/storage/v1/object/public/CS218//useMap.json";
-  "https://rtzwjflattrvmhgikvrv.supabase.co/storage/v1/object/public/CS218//useMap.json";
-
-// "https://rtzwjflattrvmhgikvrv.supabase.co/storage/v1/object/public/CS218/cities.json";
+  "https://rtzwjflattrvmhgikvrv.supabase.co/storage/v1/object/public/CS218//temp.json";
 const CitiesContext = createContext();
 
 function CitiesProvider({ children }) {
