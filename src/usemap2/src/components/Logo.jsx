@@ -1,11 +1,10 @@
 import { NavLink } from "react-router-dom";
-import logo from "../assets/useMap-bg.png";
 
 const Logo = () => {
   return (
     <>
       <NavLink to="/">
-        <img src={logo} alt="WorldWise logo" />
+        <img src="/images/useMap-bg.png" alt="logo" />
       </NavLink>
     </>
   );
