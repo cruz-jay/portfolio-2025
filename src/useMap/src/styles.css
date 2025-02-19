@@ -87,7 +87,6 @@ html {
   box-sizing: border-box;
 }
 
-/* Keep the CTA styles global since they're used across components */
 .cta:link,
 .cta:visited {
   display: inline-block;

@@ -21,10 +21,20 @@ import ProtectedRoute from "./useCert/src/components/ProtectedRoute";
 import FacultyDashboard from "./useCert/src/components/FacultyDash";
 import CERT_LAYOUT from "./useCert/src/pages/CERT_LAYOUT";
 
+/// New
+import MAP2_LAYOUT from "./usemap2/src/pages/MAP2_LAYOUT";
+import WorldLayout from "./usemap2/src/pages/WorldLayout";
+import PastCities from "./usemap2/src/pages/PastCities";
+import FutureCityList from "./usemap2/src/pages/FutureCityList";
+// NEW
+
 import UseCertHome from "./home/useCertHome";
 import UseMapHome from "./home/useMapHome";
 import UseX86Home from "./home/useX86Home";
 import "../src/output.css";
+
+import { NewCitiesProvider } from "./usemap2/src/Context/Data";
+import { FutureCityProvider } from "./usemap2/src/Context/Data_two";
 
 function Logout() {
   localStorage.clear();
@@ -137,6 +147,36 @@ const router = createBrowserRouter([
       {
         path: "form",
         element: <Form />,
+      },
+    ],
+  },
+  {
+    path: "useMap2",
+    element: (
+      <NewCitiesProvider>
+        <FutureCityProvider>
+          <MAP2_LAYOUT />
+        </FutureCityProvider>
+      </NewCitiesProvider>
+    ),
+    children: [
+      {
+        path: "world",
+        element: <WorldLayout />,
+        children: [
+          {
+            path: "",
+            element: <Navigate replace to="cities" />,
+          },
+          {
+            path: "cities",
+            element: <PastCities />,
+          },
+          {
+            path: "future",
+            element: <FutureCityList />,
+          },
+        ],
       },
     ],
   },
