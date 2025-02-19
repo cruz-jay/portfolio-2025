@@ -11,10 +11,10 @@
 
 @font-face {
   font-family: "Melagllik";
-  src: url("/fonts/melagllik/MELAGLLIK(ITALIC).otf") format("opentype"),
-    url("/fonts/melagllik/MELAGLLIK(ITALIC).ttf") format("truetype"),
-    url("/fonts/melagllik/MELAGLLIK (ITALIC).woff") format("woff"),
-    url("/fonts/melagllik/MELAGLLIK (ITALIC).woff2") format("woff2");
+  src: url("/fonts/melagllik/MELAGLLIK%20(ITALIC).otf") format("opentype"),
+    url("/fonts/melagllik/MELAGLLIK%20(ITALIC).ttf") format("truetype"),
+    url("/fonts/melagllik/MELAGLLIK%20(ITALIC).woff") format("woff"),
+    url("/fonts/melagllik/MELAGLLIK%20(ITALIC).woff2") format("woff2");
   font-weight: normal;
   font-style: italic;
   font-display: swap;
@@ -46,8 +46,24 @@
 
 @font-face {
   font-family: "Didot";
-  src: url("/fonts/didot/Didot Italic.otf") format("opentype");
+  src: url("/fonts/didot/Didot%20Italic.otf") format("opentype");
   font-weight: normal;
   font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Didot";
+  src: url("/fonts/didot/Didot%20Bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Didot";
+  src: url("/fonts/didot/Didot%20Title.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
   font-display: swap;
 }
