@@ -2,11 +2,7 @@
 export default {
   content: ["./index.html", "./src/usemap2/src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {
-      fontFamily: {
-        custom: ["Melagllik", "sans-serif"],
-      },
-    },
+    extend: {},
   },
   plugins: [],
 };
