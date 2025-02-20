@@ -76,6 +76,8 @@ const ProjectShowcase = ({
   demoLink,
   codePreviews,
   videoFile,
+  showLegacyDemo,
+  legacyDemo,
 }) => {
   return (
     <div className="min-h-screen bg-[#0b2c3d] text-black py-20 px-8 lg:px-20">
@@ -141,7 +143,6 @@ const ProjectShowcase = ({
           </h2>
           <CodeCarousel codePreviews={codePreviews} />
         </motion.div>
-        {/* Demo Link */}
         <motion.div
           initial={{ x: 100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
@@ -151,6 +152,13 @@ const ProjectShowcase = ({
             className="inline-block font-custom2 text-lg text-[#B8860B] p-4 hover:bg-[#858d71] hover:text-[#DAA520] rounded-xl transition-all">
             View Live Demo →
           </a>
+          {showLegacyDemo && (
+            <a
+              href={legacyDemo}
+              className="inline-block font-custom2 text-lg text-[#B8860B] p-4 hover:bg-[#858d71] hover:text-[#DAA520] rounded-xl transition-all">
+              View Legacy Demo →
+            </a>
+          )}
         </motion.div>
       </motion.div>
     </div>

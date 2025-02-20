@@ -24,7 +24,7 @@ const MAP2_LAYOUT = () => {
               </div>
 
               <Link
-                to="/useMap2/world"
+                to="/usemap2/world"
                 className="inline-block px-8 py-4 text-lg font-semibold text-white bg-gradient-to-r from-pink-500 to-purple-500 rounded-full
                   transform transition-all duration-300 hover:scale-105 hover:shadow-lg
                   hover:from-pink-600 hover:to-purple-600

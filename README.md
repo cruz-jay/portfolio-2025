@@ -6,7 +6,7 @@ The domain name "Head-Space & Timing" refers to: a tool for a .50 caliber machin
 The project consists of a main page along with 3 routes leading to individual project introductions:
 
 useX86
-useMap
+useMap2
 useCert
 Each project showcases different technologies and skill sets.
 

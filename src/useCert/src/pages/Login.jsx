@@ -1,7 +1,7 @@
 // /Users/jay/Final/src/useCert/src/pages/Login.jsx
 import Form from "../components/Form";
 import Header from "../components/Header";
-import Footer from "../components/Footer";
+// import Footer from "../components/Footer";
 import RegisterLink from "../components/RegisterLink.jsx";
 
 const Login = () => {

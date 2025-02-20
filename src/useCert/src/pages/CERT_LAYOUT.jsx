@@ -2,7 +2,7 @@ import "./Home.module.css";
 import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 import Header from "../components/Header";
-import Footer from "../components/Footer";
+// import Footer from "../components/Footer";
 import StudentDash from "../components/StudentDash";
 import styles from "./Home.module.css";
 

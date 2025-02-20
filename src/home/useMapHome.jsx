@@ -95,7 +95,9 @@ export function useGeolocation() {
         description: "Reusing Logic with Custom Hooks",
       },
     ],
-    demoLink: "/useMap",
+    demoLink: "/usemap2",
+    showLegacyDemo: true,
+    legacyDemo: "https://legacy-showcase.vercel.app/useMap",
   };
 
   return <ProjectShowcase {...projectData} />;

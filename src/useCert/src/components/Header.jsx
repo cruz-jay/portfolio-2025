@@ -1,21 +1,41 @@
-// Header.jsx
-import { Container, Navbar, NavbarBrand } from "reactstrap";
-import styles from "./Header.module.css";
+import { useState } from "react";
+import "./Header.css";
 
-function Header() {
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
-    <div className={styles.headerWrapper}>
-      <Navbar dark className={styles.navbar} sticky="top" expand="md">
-        <Container>
-          <NavbarBrand>
-            <div className={styles.headerContent}>
-              <h1 className={styles.title}>Exam Registration System</h1>
-            </div>
-          </NavbarBrand>
-        </Container>
-      </Navbar>
-    </div>
+    <header className="header">
+      <nav className="nav-container">
+        <div className="nav-content">
+          <div className="logo-section">
+            <h1>Exam Registration System</h1>
+          </div>
+
+          <button
+            className={`menu-toggle ${isMenuOpen ? "active" : ""}`}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle navigation menu">
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+            <span className="hamburger-line"></span>
+          </button>
+
+          <div className={`nav-links ${isMenuOpen ? "active" : ""}`}>
+            {/* <a href="#" className="nav-link">
+              Dashboard
+            </a>
+            <a href="#" className="nav-link">
+              Registration
+            </a>
+            <a href="#" className="nav-link">
+              Schedule
+            </a> */}
+          </div>
+        </div>
+      </nav>
+    </header>
   );
-}
+};
 
 export default Header;

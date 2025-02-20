@@ -5,14 +5,6 @@ import MainPage from "./useX86/src/pages/MainPage";
 import DataPage from "./useX86/src/pages/DataPage";
 import { ASM_LAYOUT } from "./useX86/src/pages/MainPage";
 
-import { CitiesProvider } from "./useMap/src/contexts/CitiesContext";
-import Homepage from "./useMap/src/pages/Homepage";
-import AppLayout from "./useMap/src/pages/AppLayout";
-import City from "./useMap/src/components/City";
-import CityList from "./useMap/src/components/CityList";
-import CountryList from "./useMap/src/components/CountyList";
-import Form from "./useMap/src/components/Form";
-
 import Login from "./useCert/src/pages/Login";
 import Register from "./useCert/src/pages/Register";
 import UserData from "./useCert/src/pages/UserData";
@@ -109,44 +101,6 @@ const router = createBrowserRouter([
             <FacultyDashboard />
           </ProtectedRoute>
         ),
-      },
-    ],
-  },
-  {
-    path: "useMap",
-    element: (
-      <CitiesProvider>
-        <Homepage />
-      </CitiesProvider>
-    ),
-  },
-  {
-    path: "useMap/app",
-    element: (
-      <CitiesProvider>
-        <AppLayout />
-      </CitiesProvider>
-    ),
-    children: [
-      {
-        path: "",
-        element: <Navigate replace to="cities" />,
-      },
-      {
-        path: "cities",
-        element: <CityList />,
-      },
-      {
-        path: "cities/:id",
-        element: <City />,
-      },
-      {
-        path: "countries",
-        element: <CountryList />,
-      },
-      {
-        path: "form",
-        element: <Form />,
       },
     ],
   },
