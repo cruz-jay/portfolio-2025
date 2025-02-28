@@ -137,7 +137,7 @@ const Home = () => {
             </motion.a>
             <motion.a
               whileHover={{ y: -3 }}
-              href="https://www.google.com/search?sca_esv=460b7901733d8f1c&sxsrf=AHTn8zog8If-tkRxySadxgTjZV3Yk-3ZoQ:1738742417850&q=i+don%27t+have+one+lol&spell=1&sa=X&ved=2ahUKEwj6x6-hiKyLAxUrC0QIHesZBogQBSgAegQIERAB&biw=1357&bih=792&dpr=2"
+              href="www.linkedin.com/in/jay-cruz-1aa183318"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-[#B8860B] transition-colors">
