@@ -137,7 +137,7 @@ const Home = () => {
             </motion.a>
             <motion.a
               whileHover={{ y: -3 }}
-              href="www.linkedin.com/in/jay-cruz-1aa183318"
+              href="https://linkedin.com/in/jay-cruz-1aa183318"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-[#B8860B] transition-colors">
@@ -155,5 +155,6 @@ const Home = () => {
     </div>
   );
 };
+// ahh
 
 export default Home;
