@@ -52,7 +52,7 @@ const Header = () => (
       JC
     </div>
     <h1 className="text-5xl font-bold mb-4">
-      Hey, I'm <span className="text-[#B8860B]">Jay</span>.
+      Hey, I'm <span className="text-[#B8860B]">Jay</span>
     </h1>
     <p className="text-3xl text-gray-400">
       I'm a <span className="text-white">Computer Science Student</span> here at
