@@ -9,20 +9,6 @@ import ProgressBar from "../components/interfaces/ProgressBar";
 import Quiz from "../components/common/Quiz";
 import NextButton from "../components/common/NextButton";
 import Finished from "../components/common/Finished";
-import { Outlet } from "react-router-dom";
-import "../styles/x86-output.css";
-import Header from "../components/common/Header";
-
-export const ASM_LAYOUT = () => {
-  return (
-    <>
-      <Header />
-      <div>
-        <Outlet />
-      </div>
-    </>
-  );
-};
 
 const MainPage = () => {
   const dispatch = useDispatch();

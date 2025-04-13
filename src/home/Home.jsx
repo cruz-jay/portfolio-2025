@@ -1,7 +1,6 @@
-import { Map, BookOpen, CheckCircle } from "lucide-react";
+import { Map, BookOpen } from "lucide-react";
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail } from "lucide-react";
-import Saturn from "./Saturn";
 
 const fadeInRight = {
   initial: { x: 100, opacity: 0 },
@@ -83,12 +82,12 @@ const AboutMe = () => (
 const Home = () => {
   const projects = [
     {
-      title: "x86 Assembly Quiz",
+      title: "AI Music Generator - Spotify Mock",
       description:
-        "Educational platform for learning x86 assembly language through interactive quizzes.",
+        "Login with Google, Spotify or Github and generate tracks with a descriptive prompt.",
       icon: BookOpen,
-      link: "/showcase_3",
-      tech: ["React", "Redux", "Tailwind CSS"],
+      link: "/showcase_1",
+      tech: ["React", "Next", "TanStack Query", "Tailwind CSS"],
     },
     {
       title: "World Explorer",
@@ -96,15 +95,15 @@ const Home = () => {
         "Interactive world map application for tracking visited cities and exploring new destinations.",
       icon: Map,
       link: "/showcase_2",
-      tech: ["React", "Leaflet", "REST API", "CSS Modules"],
+      tech: ["React", "React Router", "MapBox", "S3 Buckets"],
     },
     {
-      title: "Certification System",
+      title: "x86 Assembly Quiz",
       description:
-        "An advanced certification and exam management system with role-based access control. Features user authentication, exam scheduling, and progress tracking.",
-      icon: CheckCircle,
-      link: "/showcase_1",
-      tech: ["React", "Django", "JWT", "PostgreSQL"],
+        "Educational platform for learning x86 assembly language through interactive quizzes.",
+      icon: BookOpen,
+      link: "/showcase_3",
+      tech: ["React", "Redux", "PostgreSQL"],
     },
   ];
 
@@ -112,7 +111,6 @@ const Home = () => {
     <div className="bg-[#0b2c3d] text-gray-300">
       <div className="max-w-5xl mx-auto px-8 lg:px-20">
         <Header />
-        {/* <Saturn /> */}
         <AboutMe />
         <motion.div {...fadeInRight} className="min-h-screen py-20">
           <h2 className="text-4xl font-bold mb-20 font-custom">PROJECTS</h2>

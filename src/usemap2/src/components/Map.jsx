@@ -98,12 +98,12 @@ const Map = () => {
 
   return (
     <>
-      <div className="sidebar">
-        Longitude: {center[0]} | Latitude: {center[1]} | Zoom: {zoom}
+      <div className="absolute top-4 right-4 bg-white/80 backdrop-blur-sm p-2 rounded-md text-sm text-slate-700 z-10 shadow-md">
+        Long: {center[0].toFixed(4)} | Lat: {center[1].toFixed(4)}
       </div>
       <div
         ref={mapContainerRef}
-        className="w-full"
+        className="w-full h-full"
         style={{
           position: "absolute",
           top: 0,

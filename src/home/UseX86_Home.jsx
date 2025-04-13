@@ -1,6 +1,6 @@
 import ProjectShowcase from "./ProjectShowcase";
 
-const UseX86Home = () => {
+function UseX86_Home() {
   const projectData = {
     title: "x86 Assembly Quiz",
     techStack: [
@@ -19,6 +19,13 @@ const UseX86Home = () => {
       {
         name: "React Router",
         description: "Navigation and routing",
+      },
+    ],
+    projectJourney: [
+      {
+        heading: "A Quick and Practical Tool for My CS218 Class",
+        paragraph:
+          "I built this web app in a day as a helpful resource for my Assembly class. It features a simple quiz and a leaderboard where users can submit their scores for others to see. I'm considering adding more resources and features to expand its usefulness for my classmates.",
       },
     ],
     codePreviews: [
@@ -177,6 +184,6 @@ export const supabase = createClient(supabaseUrl, supabaseKey);
   };
 
   return <ProjectShowcase {...projectData} />;
-};
+}
 
-export default UseX86Home;
+export default UseX86_Home;

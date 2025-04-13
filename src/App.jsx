@@ -1,42 +1,22 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Navigate } from "react-router-dom";
+
 import Home from "./home/Home";
 import MainPage from "./useX86/src/pages/MainPage";
 import DataPage from "./useX86/src/pages/DataPage";
-import { ASM_LAYOUT } from "./useX86/src/pages/MainPage";
 
-import Login from "./useCert/src/pages/Login";
-import Register from "./useCert/src/pages/Register";
-import UserData from "./useCert/src/pages/UserData";
-import RegistrationConfirmation from "./useCert/src/pages/RegistrationConfirmation";
-import ProtectedRoute from "./useCert/src/components/ProtectedRoute";
-import FacultyDashboard from "./useCert/src/components/FacultyDash";
-import CERT_LAYOUT from "./useCert/src/pages/CERT_LAYOUT";
-
-/// New
-import MAP2_LAYOUT from "./usemap2/src/pages/MAP2_LAYOUT";
 import WorldLayout from "./usemap2/src/pages/WorldLayout";
 import PastCities from "./usemap2/src/pages/PastCities";
 import FutureCityList from "./usemap2/src/pages/FutureCityList";
-// NEW
-
-import UseCertHome from "./home/useCertHome";
-import UseMapHome from "./home/useMapHome";
-import UseX86Home from "./home/useX86Home";
-import "../src/output.css";
-
 import { NewCitiesProvider } from "./usemap2/src/Context/Data";
 import { FutureCityProvider } from "./usemap2/src/Context/Data_two";
 
-function Logout() {
-  localStorage.clear();
-  return <Navigate to="/useCert/login" />; // Changed from "/login"
-}
+import ProjectTwoHome from "./usemap2/src/pages/ProjectTwoHome";
+import ProjectThreeHome from "./useX86/src/pages/ProjectThreeHome";
 
-function RegisterAndLogout() {
-  localStorage.clear();
-  return <Register />;
-}
+import UseMap_Home from "./home/useMap_Home";
+import UseX86_Home from "./home/useX86_Home";
+import UseBeatBot_Home from "./home/UseBeatBot_Home";
 
 const router = createBrowserRouter([
   {
@@ -45,71 +25,22 @@ const router = createBrowserRouter([
   },
   {
     path: "showcase_1",
-    element: <UseCertHome />,
+    element: <UseBeatBot_Home />,
   },
   {
     path: "showcase_2",
-    element: <UseMapHome />,
+    element: <UseMap_Home />,
   },
   {
     path: "showcase_3",
-    element: <UseX86Home />,
+    element: <UseX86_Home />,
   },
   {
-    path: "useCert",
-    children: [
-      {
-        path: "login",
-        element: <Login />,
-      },
-      {
-        path: "logout",
-        element: <Logout />,
-      },
-      {
-        path: "register",
-        element: <RegisterAndLogout />,
-      },
-      {
-        path: "",
-        element: (
-          <ProtectedRoute>
-            <CERT_LAYOUT />
-          </ProtectedRoute>
-        ),
-      },
-      {
-        path: "complete-profile",
-        element: (
-          <ProtectedRoute>
-            <UserData />
-          </ProtectedRoute>
-        ),
-      },
-      {
-        path: "registration-confirmation",
-        element: (
-          <ProtectedRoute>
-            <RegistrationConfirmation />
-          </ProtectedRoute>
-        ),
-      },
-      {
-        path: "faculty-dashboard",
-        element: (
-          <ProtectedRoute>
-            <FacultyDashboard />
-          </ProtectedRoute>
-        ),
-      },
-    ],
-  },
-  {
-    path: "useMap2",
+    path: "useMap",
     element: (
       <NewCitiesProvider>
         <FutureCityProvider>
-          <MAP2_LAYOUT />
+          <ProjectTwoHome />
         </FutureCityProvider>
       </NewCitiesProvider>
     ),
@@ -136,7 +67,7 @@ const router = createBrowserRouter([
   },
   {
     path: "useX86",
-    element: <ASM_LAYOUT />,
+    element: <ProjectThreeHome />,
     children: [
       {
         path: "",

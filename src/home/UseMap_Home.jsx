@@ -1,6 +1,6 @@
 import ProjectShowcase from "./ProjectShowcase";
 
-const UseMapHome = () => {
+function UseMap_Home() {
   const projectData = {
     title: "World Explorer",
     techStack: [
@@ -21,6 +21,13 @@ const UseMapHome = () => {
         description: "User location tracking",
       },
     ],
+    projectJourney: [
+      {
+        heading: "A Visual Journey Through My Travels",
+        paragraph:
+          "This project is a rework of an older version I had previously built. I upgraded the map feature by switching from Leaflet to the more modern Mapbox API. The app includes interactive pins marking the places I’ve visited, along with photos from each adventure to give a more personal and visual touch.",
+      },
+    ],
     codePreviews: [
       {
         code: `// Map.jsx -         
@@ -36,7 +43,8 @@ function Map() {
         scrollWheelZoom={true}
         className={styles.map}>
         <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          attribution='&copy; 
+          <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> 
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         {cities.map((city) => (
@@ -95,12 +103,10 @@ export function useGeolocation() {
         description: "Reusing Logic with Custom Hooks",
       },
     ],
-    demoLink: "/usemap2",
-    showLegacyDemo: true,
-    legacyDemo: "https://legacy-showcase.vercel.app/useMap",
+    demoLink: "/useMap",
   };
 
   return <ProjectShowcase {...projectData} />;
-};
+}
 
-export default UseMapHome;
+export default UseMap_Home;
