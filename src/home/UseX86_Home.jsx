@@ -179,7 +179,7 @@ export const supabase = createClient(supabaseUrl, supabaseKey);
         description: "Progress tracking with Supabase integration",
       },
     ],
-    demoLink: "/useX86",
+    demoLink: "https://use-x86.vercel.app/",
     videoFile: "/mp4/one.mp4",
   };
 
