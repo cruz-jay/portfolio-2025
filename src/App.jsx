@@ -66,20 +66,6 @@ const router = createBrowserRouter([
       },
     ],
   },
-  {
-    path: "useX86",
-    element: <ProjectThreeHome />,
-    children: [
-      {
-        path: "",
-        element: <MainPage />,
-      },
-      {
-        path: "data",
-        element: <DataPage />,
-      },
-    ],
-  },
 ]);
 
 function App() {

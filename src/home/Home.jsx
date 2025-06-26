@@ -9,38 +9,6 @@ const fadeInRight = {
   viewport: { once: true },
 };
 
-const ProjectCard = ({ title, description, icon: Icon, link, tech }) => (
-  <motion.div
-    {...fadeInRight}
-    href={link}
-    className=" group relative flex flex-col p-6 rounded-xl transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:bg-[#FFF]">
-    <div className="p-5 rounded-full bg-[#858d71] w-fit mb-5 group-hover:bg-[#00000] transition-colors">
-      <Icon className="w-8 h-8 text-[#FFFF]" />
-    </div>
-    <h3 className="text-4xl font-bold mb-1 text-[#B8860B] font-custom ">
-      {title}
-    </h3>
-    <p className="text-gray-300 mb-2 flex-grow font-custom3 text-2xl group-hover:text-black transition-colors">
-      {description}
-    </p>
-    <div className="flex flex-wrap gap-2 mb-2  ">
-      {tech.map((item, index) => (
-        <span
-          key={index}
-          className="font-custom2 text-2xl px-3 py-1 bg-[#858d71] text-gray-300   group-hover:text-black rounded-full transition-colors">
-          {item}
-        </span>
-      ))}
-    </div>
-    <motion.a
-      href={link}
-      whileHover={{ x: 5 }}
-      className=" font-custom2 text-2xl text-[#B8860B] p-3  w-fit  hover:bg-[#858d71] hover:text-[#FFFF] rounded-xl transition-colors inline-flex items-center">
-      View Project →
-    </motion.a>
-  </motion.div>
-);
-
 const Header = () => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
@@ -79,6 +47,39 @@ const AboutMe = () => (
     </motion.a>
   </motion.div>
 );
+
+const ProjectCard = ({ title, description, icon: Icon, link, tech }) => (
+  <motion.div
+    {...fadeInRight}
+    href={link}
+    className=" group relative flex flex-col p-6 rounded-xl transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:bg-[#FFF]">
+    <div className="p-5 rounded-full bg-[#858d71] w-fit mb-5 group-hover:bg-[#00000] transition-colors">
+      <Icon className="w-8 h-8 text-[#FFFF]" />
+    </div>
+    <h3 className="text-4xl font-bold mb-1 text-[#B8860B] font-custom ">
+      {title}
+    </h3>
+    <p className="text-gray-300 mb-2 flex-grow font-custom3 text-2xl group-hover:text-black transition-colors">
+      {description}
+    </p>
+    <div className="flex flex-wrap gap-2 mb-2  ">
+      {tech.map((item, index) => (
+        <span
+          key={index}
+          className="font-custom2 text-2xl px-3 py-1 bg-[#858d71] text-gray-300   group-hover:text-black rounded-full transition-colors">
+          {item}
+        </span>
+      ))}
+    </div>
+    <motion.a
+      href={link}
+      whileHover={{ x: 5 }}
+      className=" font-custom2 text-2xl text-[#B8860B] p-3  w-fit  hover:bg-[#858d71] hover:text-[#FFFF] rounded-xl transition-colors inline-flex items-center">
+      View Project →
+    </motion.a>
+  </motion.div>
+);
+
 const Home = () => {
   const projects = [
     {
