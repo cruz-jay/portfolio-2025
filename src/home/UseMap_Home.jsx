@@ -103,7 +103,7 @@ export function useGeolocation() {
         description: "Reusing Logic with Custom Hooks",
       },
     ],
-    demoLink: "/useMap",
+    demoLink: "https://use-map-git-master-cruz-jays-projects.vercel.app/",
   };
 
   return <ProjectShowcase {...projectData} />;
